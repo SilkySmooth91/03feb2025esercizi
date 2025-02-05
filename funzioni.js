@@ -60,3 +60,55 @@ function arraySum(arr) {
 }
 
 console.log(arraySum(myArr))
+
+//Crea una funzione che controlli che un array non contenga i numeri 1 o 3. Se non li contiene, ritorna "true", altrimenti ritorna "false".
+
+const newArr = [4, 8, "banana", true, 17]
+
+function check13(arr) {
+    if (arr.includes(1) || arr.includes(3)) {
+        return false
+    } else {
+        return true
+    }
+}
+
+console.log(check13(newArr))
+
+//Crea una funzione per trovare il tipo di un angolo i cui gradi sono passati come parametro. Angolo acuto: meno di 90° > ritorna "acuto". Angolo ottuso: tra 90° e 180° > ritorna "ottuso". Angolo retto: 90°  > ritorna "retto". Angolo piatto: 180° > ritorna "piatto". 
+
+function angle(gradi) {
+    if (gradi < 90) {
+        return "acuto" 
+    } else if (gradi === 90) {
+        return "retto" 
+    } else if (gradi > 90 && gradi < 180) {
+        return "ottuso"
+    } else if (gradi === 180) {
+        return "piatto" 
+    } else {
+        return "invalid"
+    }
+}
+
+console.log(angle(180))
+
+//Crea una funziona che crei un acronimo a partire da una frase. Es. "Fabbrica Italiana Automobili Torino" deve ritornare "FIAT". 
+
+let frase = "Istituto Nazionale Previdenza Sociale"
+
+function acronym(str) {
+    const words = str.split(" ")
+    const firstLetters = []
+    words.forEach((word) => {
+        if (word.length > 0) { 
+            word.toUpperCase()
+            firstLetters.push(word[0])
+        }
+    })
+    const acronimo = firstLetters.join("")
+
+    return acronimo
+}
+
+console.log(acronym(frase))
